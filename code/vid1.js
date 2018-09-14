@@ -1,26 +1,37 @@
 var videoshow = require('../')
 
+var video_output = 'output/video_'+new Date().getTime()+'.mp4';
+
 var songs = [
+  __dirname + '/output/banana.mp3',
   __dirname + '/output/apple.mp3',
   __dirname + '/data/apple__gb_1.mp3',
   __dirname + '/data/banana__gb_2.mp3',
   __dirname + '/data/peach__gb_2.mp3',
   __dirname + '/data/tayberry__gb_1.mp3',
 ];
+
 var images = [
+  {
+    path: __dirname + '/data/img-2.jpg',
+    caption: 'banana [E] /bəˈnɑːnə/',
+    captionEnd: 2
+  },
+  {
+    path: __dirname + '/data/img-2.jpg',
+    caption: 'banana [A] /bəˈnɑːnə/',
+  }
+];
+
+var images2 = [
   {
     path: __dirname + '/data/img-1.jpg',
     caption: 'Apple [E] /ˈæpl/',
-    // loop: 2,
-    // captionStart: 1,
     captionEnd: 2
   },
   {
     path: __dirname + '/data/img-1.jpg',
     caption: 'Apple [A] /ˈæpl/',
-    // loop: 2,
-    // captionStart: 2,
-    // captionEnd: 3
   }
 ];
 
@@ -31,7 +42,7 @@ var audio_options = {
 
 var options = {
   loop: 4,// seconds
-  captionDelay: 350,
+  captionDelay: 1,
   transitionDuration: 1, // seconds
   transition: false,
 
@@ -66,7 +77,7 @@ var options = {
 
 videoshow(images, options)
   .audio(songs[0],audio_options)
-  .save('output/video_'+new Date().getTime()+'.mp4')
+  .save(video_output)
   .on('start', function (command) {
     console.log('ffmpeg process started:', command)
   })
