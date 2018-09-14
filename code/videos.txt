@@ -1,2 +1,2 @@
-file 'output/video_1536920006510.mp4'
-file 'output/video_1536921850590.mp4'
+file 'output/apple.mp4'
+file 'output/banana.mp4'

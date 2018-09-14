@@ -1,36 +1,20 @@
 var videoshow = require('../')
 
-var video_output = 'output/video_'+new Date().getTime()+'.mp4';
+var video_output = 'output/apple.mp4';
 
 var songs = [
-  __dirname + '/output/banana.mp3',
   __dirname + '/output/apple.mp3',
-  __dirname + '/data/apple__gb_1.mp3',
-  __dirname + '/data/banana__gb_2.mp3',
-  __dirname + '/data/peach__gb_2.mp3',
-  __dirname + '/data/tayberry__gb_1.mp3',
 ];
 
 var images = [
   {
-    path: __dirname + '/data/img-2.jpg',
-    caption: 'banana [E] /bəˈnɑːnə/',
-    captionEnd: 2
-  },
-  {
-    path: __dirname + '/data/img-2.jpg',
-    caption: 'banana [A] /bəˈnɑːnə/',
-  }
-];
-
-var images2 = [
-  {
-    path: __dirname + '/data/img-1.jpg',
+    path: __dirname + '/data/apple.jpg',
     caption: 'Apple [E] /ˈæpl/',
+    captionStart: 0,
     captionEnd: 2
   },
   {
-    path: __dirname + '/data/img-1.jpg',
+    path: __dirname + '/data/apple2.jpg',
     caption: 'Apple [A] /ˈæpl/',
   }
 ];
@@ -43,7 +27,7 @@ var audio_options = {
 var options = {
   loop: 4,// seconds
   captionDelay: 1,
-  transitionDuration: 1, // seconds
+  transitionDuration: 0, // seconds
   transition: false,
 
   fps: 25,
